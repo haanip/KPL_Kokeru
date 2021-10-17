@@ -17,7 +17,7 @@
   session_start();
   require_once('db_login.php');
   if (!isset($_SESSION['username'])){
-                header('Location: awal.php');
+                header('Location: awal.php')
             }
 ?>
 <div class="wrapper">
@@ -39,7 +39,7 @@
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
-      </li>
+      </li
       <li class="nav-item">
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
           <i class="fas fa-th-large"></i>
@@ -51,7 +51,7 @@
 
  <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
+    <!-- Brand Logo --
     <a href="peng_home.php" class="brand-link">
       <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">KoKeRu</span>
@@ -71,17 +71,17 @@
             if (!$result){
                  die ("Could not query the database: <br />". $db->error ."<br>Query: ".$query);
             }
-            $row = $result->fetch_object();
+            $row = $result->fetch_object()
             echo "<a href='peng_profil.php' class='d-block'>".$row->nama_peng."</a>";
-          ?>
+          ?
         </div>
       </div>
 
 
       <!-- Sidebar Menu -->
-      <nav class="mt-2">
+      <nav class="mt-2"
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
+          <!-- Add icons to the links using the .nav-icon clas
                with font-awesome or any other icon font library -->
 		  <li class="nav-item">
             <a href="peng_home.php" class="nav-link">
@@ -99,7 +99,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item"
             <a href="tampil_laporan.php?tanggal=<?php date_default_timezone_set("Asia/Jakarta"); echo date('Y-m-d');?>&status=all" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
@@ -115,7 +115,7 @@
                 Sign Out
               </p>
             </a>
-          </li>
+          </li
       </nav>
       <!-- /.sidebar-menu -->
     </div>
@@ -129,7 +129,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>DASHBOARD</h1>
+            <h1>DASHBOARD</h1
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -140,7 +140,6 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
-
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
