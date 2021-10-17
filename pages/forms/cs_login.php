@@ -22,7 +22,48 @@ if (isset($_SESSION['username'])){
 }
 
 //cek apakah user sudah submit form
+if(isset($_POST["submit"])){
+    $valid = TRUE; //flag validasi
+    //cek validasi email
+    $email = test_input($_POST['email']);
+    if($email == ''){
+        $error_email = "Email is required";
+        $valid = FALSE;
+    }elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        $error_email = "Invalid email format";
+        $valid = FALSE;
+    }
+    //cek validasi password
+    $password = test_input($_POST['password']);
+    if($password == ''){
+        $error_password = "Password is required";
+        $valid = FALSE;
+    }
 
+    //cek validasi
+    if($valid){
+        //Assign a query
+        $query =  "SELECT * FROM cs WHERE email = '".$email."' AND password='".md5($password)."' ";
+        //Execute the query
+        $result = $db->query($query);
+        if(!$result){
+            die ("Could not query the database: <br/>".$db->error);
+        }else{
+            if($result->num_rows > 0){
+                $row = $result->fetch_object();
+                $_SESSION['username'] = $email;
+                echo("<script>location.href = 'cs_ruang.php?id=0';</script>");
+                exit;
+            }else{
+                $error = "<b>Combination of username and password are not correct.</b>";
+            }
+        }
+        //close db connection
+        $db->close();
+    }
+}
+
+?>
 
 
 
@@ -32,13 +73,13 @@ if (isset($_SESSION['username'])){
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2"
+        <div class="row mb-2">
           <div class="col-sm-6">
             <h1>
             <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8; width:50px; height:50px;">
             KoKeRu</h1>
           </div>
-          <div class="col-sm-6"
+          <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">Halaman Login Cleaning Service</li>
@@ -47,14 +88,6 @@ if (isset($_SESSION['username'])){
         </div>
       </div><!-- /.container-fluid -->
     </section>
-
-<footer class="card-footer" style="position: fixed; left: 0; bottom: 0;  width: 100%;">
-    <strong>Copyright &copy; 2020 <a href="https://adminlte.io">KoKeru</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0.0-rc
-    </div>
-  </footer
 <!-- Horizontal Form -->
             <div class="card card-info shadow p-3 mb-5 bg-white rounded" style="width: 40%; margin: 20px auto; border-radius: 25px; box-sizing: border-box; padding: 15px 20px;">
               <div class="card-header">
@@ -63,11 +96,11 @@ if (isset($_SESSION['username'])){
               <!-- /.card-header -->
               <!-- form start -->
               <form method="POST" autocomplete="on" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                <div class="card-body"
+                <div class="card-body">
                   <label for="inputEmail3" class="col-form-label">Email :</label>
                   <div>
                     <input type="email" class="form-control" id="email" name="email" size="30">
-                  </div
+                  </div>
                     <label for="inputPassword3" class="col-form-label">Password :</label>
                     <div>
                      <input type="password" class="form-control" id="password" name="password" value="">
