@@ -73,13 +73,13 @@ if(isset($_POST["submit"])){
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
+        <div class="row mb-2"
           <div class="col-sm-6">
             <h1>
             <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8; width:50px; height:50px;">
             KoKeRu</h1>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-6"
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">Halaman Login Cleaning Service</li>
@@ -88,6 +88,14 @@ if(isset($_POST["submit"])){
         </div>
       </div><!-- /.container-fluid -->
     </section>
+
+<footer class="card-footer" style="position: fixed; left: 0; bottom: 0;  width: 100%;">
+    <strong>Copyright &copy; 2020 <a href="https://adminlte.io">KoKeru</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0.0-rc
+    </div>
+  </footer
 <!-- Horizontal Form -->
             <div class="card card-info shadow p-3 mb-5 bg-white rounded" style="width: 40%; margin: 20px auto; border-radius: 25px; box-sizing: border-box; padding: 15px 20px;">
               <div class="card-header">
@@ -96,11 +104,11 @@ if(isset($_POST["submit"])){
               <!-- /.card-header -->
               <!-- form start -->
               <form method="POST" autocomplete="on" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                <div class="card-body">
+                <div class="card-body"
                   <label for="inputEmail3" class="col-form-label">Email :</label>
                   <div>
                     <input type="email" class="form-control" id="email" name="email" size="30">
-                  </div>
+                  </div
                     <label for="inputPassword3" class="col-form-label">Password :</label>
                     <div>
                      <input type="password" class="form-control" id="password" name="password" value="">
