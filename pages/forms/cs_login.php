@@ -22,48 +22,7 @@ if (isset($_SESSION['username'])){
 }
 
 //cek apakah user sudah submit form
-if(isset($_POST["submit"])){
-    $valid = TRUE; //flag validasi
-    //cek validasi email
-    $email = test_input($_POST['email']);
-    if($email == ''){
-        $error_email = "Email is required";
-        $valid = FALSE;
-    }elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)){
-        $error_email = "Invalid email format";
-        $valid = FALSE;
-    }
-    //cek validasi password
-    $password = test_input($_POST['password']);
-    if($password == ''){
-        $error_password = "Password is required";
-        $valid = FALSE;
-    }
 
-    //cek validasi
-    if($valid){
-        //Assign a query
-        $query =  "SELECT * FROM cs WHERE email = '".$email."' AND password='".md5($password)."' ";
-        //Execute the query
-        $result = $db->query($query);
-        if(!$result){
-            die ("Could not query the database: <br/>".$db->error);
-        }else{
-            if($result->num_rows > 0){
-                $row = $result->fetch_object();
-                $_SESSION['username'] = $email;
-                echo("<script>location.href = 'cs_ruang.php?id=0';</script>");
-                exit;
-            }else{
-                $error = "<b>Combination of username and password are not correct.</b>";
-            }
-        }
-        //close db connection
-        $db->close();
-    }
-}
-
-?>
 
 
 
