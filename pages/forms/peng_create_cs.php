@@ -26,7 +26,7 @@
   if (isset($_POST['submit'])) {
 
     $valid = TRUE; //flag validasi
-    $nama_cs = test_input($_POST['nama_cs']) && wp_verify_nonce( sanitize_key( $_POST['nama_cs'] ) ? $_POST['nama_cs'] : '';
+    $nama_cs = test_input($_POST['nama_cs']);
     if ($nama_cs == '') {
         $error_nama_cs = "Nama is required";
         $valid = FALSE;
