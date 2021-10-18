@@ -62,6 +62,7 @@
   @each $name, $color in $theme-colors {
     @include toast-variant($name, $color);
   }
+  
   @each $name, $color in $colors {
     @include toast-variant($name, $color);
   }
