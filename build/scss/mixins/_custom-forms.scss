@@ -106,7 +106,8 @@
       // the mixin is not used here to make sure there is feedback
       @if $enable-shadows {
         box-shadow: $input-box-shadow, 0 0 0 $input-btn-focus-width rgba($color, .25);
-      } @else {
+      } 
+      @else {
         box-shadow: 0 0 0 $input-btn-focus-width rgba($color, .25);
       }
     }
