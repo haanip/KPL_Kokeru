@@ -81,6 +81,7 @@
   @if $color == dark or $color == light {
     .navbar-#{$color} {
       background-color: $value;
+      
       @if $color == dark {
         border-color: lighten($dark, 10%);
       }
