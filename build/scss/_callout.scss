@@ -10,7 +10,9 @@
 
   @if $enable-shadows {
     box-shadow: map-get($elevations, 1);
-  } @else {
+  } 
+  
+  @else {
     border: 1px solid $gray-300;
   }
 
