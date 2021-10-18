@@ -489,6 +489,7 @@ body:not(.sidebar-mini-md) {
   &,
   &::before {
     $local-sidebar-transition: margin-left $transition-speed $transition-fn, width $transition-speed $transition-fn;
+    
     @include transition($local-sidebar-transition);
     width: $sidebar-width;
   }
