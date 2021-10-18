@@ -78,13 +78,16 @@
 .fa-border {
   border: solid 0.08em #eee;
   border-radius: .1em;
-  padding: .2em .25em .15em; }
+  padding: .2em .25em .15em; 
+}
 
 .fa-pull-left {
-  float: left; }
+  float: left; 
+}
 
 .fa-pull-right {
-  float: right; }
+  float: right; 
+}
 
 .fa.fa-pull-left,
 .fas.fa-pull-left,
