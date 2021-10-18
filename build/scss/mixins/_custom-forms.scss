@@ -90,7 +90,7 @@
   .custom-control-input-#{$name} {
     &:checked ~ .custom-control-label::before {
       border-color: $color;
-      @include gradient-bg($color);
+      @include bg-gradient($color);
     }
 
     &.custom-control-input-outline:checked {
